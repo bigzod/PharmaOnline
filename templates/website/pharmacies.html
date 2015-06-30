@@ -1,0 +1,13 @@
+{% extends 'website/base.html' %}
+<body>
+{% block content %}
+	{% for pharmacie in RX %}
+		<div class="jumbotron">
+			<h3>{{pharmacie.nom}} - {{pharmacie.adresse}}</h3>
+			<p><i>{{pharmacie.telephone}}</i></p>
+			<p><b>{{pharmacie.zone}}</b></p>
+		</div>
+	{% empty %}
+		<p> Aucune Pharmacie </P>
+	{% endfor %}
+{% endblock %}

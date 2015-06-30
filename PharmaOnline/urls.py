@@ -6,4 +6,5 @@ urlpatterns = patterns('',
     url(r'^$', 'website.views.home', name='home'),
     url(r'^admin/', include(admin.site.urls)),
 	url(r'^search/', include('haystack.urls')),
+	url(r'^pharmacies', 'website.views.pharmacies', name='pharmacies'),
 )

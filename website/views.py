@@ -5,3 +5,7 @@ from django.http import HttpResponse
 def home(request):
 	return render(request, 'website/base.html')
 	
+def pharmacies(request):
+	pharmacie = Pharmacie.objects.all()
+	return render(request, 'app/pharmacies.html', {'RX': pharmacie})
+	
