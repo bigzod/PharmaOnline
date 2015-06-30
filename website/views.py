@@ -7,5 +7,5 @@ def home(request):
 	
 def pharmacies(request):
 	pharmacie = Pharmacie.objects.all()
-	return render(request, 'app/pharmacies.html', {'RX': pharmacie})
+	return render(request, 'website/pharmacies.html', {'RX': pharmacie})
 	
