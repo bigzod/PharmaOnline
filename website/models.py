@@ -2,9 +2,9 @@ from django.db import models
 
 # Create your models here.
 class Medicament(models.Model):
-	nom_commercial = models.CharField(max_length = 20)
-	nom_generique = models.CharField(max_length = 30)
-	composition = models.CharField(max_length = 100)
+	nom_commercial = models.CharField(max_length = 20) #nom que donne la marque/ la compagnie
+	nom_generique = models.CharField(max_length = 30) #nom scientifique / principe actif
+	composition = models.CharField(max_length = 100) # inactive ingredients/ ingredients secondaires/inactifs
 	forme_gallenique = models.CharField(max_length = 50)
 	dosage = models.CharField(max_length = 100, blank=True, null=True)
 	quantite = models.CharField(max_length = 30)
@@ -25,9 +25,9 @@ class Pharmacie(models.Model):
 		return self.nom
 		
 class Agence(models.Model):
-	nom = models.CharField(max_length = 30)
-	adresse = models.CharField(max_length =100)
-	distrib = models.ManyToManyField('Medicament', blank=True, null=True)
+	nom_agence = models.CharField(max_length = 30)
+	adresse_agence = models.CharField(max_length =100)
+	distribue = models.ManyToManyField('Medicament', blank=True, null=True)
 	
 	def __str__(self):
 		return self.nom
