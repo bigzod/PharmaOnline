@@ -25,8 +25,8 @@ class Pharmacie(models.Model):
 		return self.nom
 		
 class Agence(models.Model):
-	nom_agence = models.CharField(max_length = 30)
-	adresse_agence = models.CharField(max_length =100)
+	nom = models.CharField(max_length = 30)
+	adresse = models.CharField(max_length =100)
 	distribue = models.ManyToManyField('Medicament', blank=True, null=True)
 	
 	def __str__(self):

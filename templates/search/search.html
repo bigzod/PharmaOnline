@@ -1,31 +1,38 @@
 {% extends 'website/base.html' %}
 	{% block form %}
-    <form method="get" action=".">
+    <form class="navbar-form navbar-left" method="get" action=".">
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Medicament/Pharmacie" name="q">
+		</div>
+	<button type="submit" class="btn btn-default" value="Search">Search<span class="glyphicon glyphicon-map-market"></span></button>
 	
-
         {% if query %}
             <h3>Results</h3>
 
             {% for result in page.object_list %}
-				<div class="jumbotron">
-					<p>
-						<a href="{{ result.object.get_absolute_url }}">{{ result.object.nom }}</a>
-						<a href="{{ result.object.get_absolute_url }}">{{ result.object.adresse }}</a>
-						<a href="{{ result.object.get_absolute_url }}">{{ result.object.zone }}</a>
-					</p>
-				{% empty %}
-					<p>No results found.</p>
-				{% endfor %}
 
-				{% if page.has_previous or page.has_next %}
-					<div>
-						{% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
-						|
-						{% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}Next &raquo;{% if page.has_next %}</a>{% endif %}
-					</div>
-				{% endif %}
-			{% else %}
-				{# Show some example queries to run, maybe query syntax, something else? #}
-			{% endif %}
+                <p>
+                    <a href="{{ result.object.get_absolute_url }}">{{ result.object.nom }}</a>
+					<a href="{{ result.object.get_absolute_url }}">{{ result.object.adresse }}</a>
+					<a href="{{ result.object.get_absolute_url }}">{{ result.object.zone }}</a>
+					<a href="{{ result.object.get_absolute_url }}">{{ result.object.nom_generique }}</a>
+					<a href="{{ result.object.get_absolute_url }}">{{ result.object.commercial }}</a>
+					<a href="{{ result.object.get_absolute_url }}">{{ result.object.quantite }}</a>
+					<a href="{{ result.object.get_absolute_url }}">{{ result.object.compagnie }}</a>
+                </p>
+            {% empty %}
+                <p>No results found.</p>
+            {% endfor %}
+
+            {% if page.has_previous or page.has_next %}
+                <div>
+                    {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
+                    |
+                    {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}Next &raquo;{% if page.has_next %}</a>{% endif %}
+                </div>
+            {% endif %}
+        {% else %}
+            {# Show some example queries to run, maybe query syntax, something else? #}
+        {% endif %}
     </form>
 	{% endblock %}
