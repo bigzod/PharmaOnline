@@ -1,43 +1,16 @@
-# Heroku Django Starter Template
+PharmaOnline Project
 
-An utterly fantastic project starter template for Django 1.8.
+PharmaOnline is a project whose main goal is to facilitate access to health related products, especially pharmaceuticals, in haiti.
+Often, it is difficult for people to find their prescribed drugs (and sometimes even over-the-counter drugs) around Haiti's cities due to various reasons.
 
-## Features
+- Scarcity of the drugs itself
 
-- Production-ready configuration for Static Files, Database Settings, Gunicorn, etc.
-- Enhancements to Django's static file serving functionality via WhiteNoise
-- Enhancements to Django's database functionality via django-postgrespool and dj-database-url
+- An unorganized system
 
-## How to Use
+- Lack of documentation and real time knowledge of the generic drugs that are available or unavailable on the market.
 
-To use this project, follow these steps:
 
-1. Create your working environment.
-2. Install Django (`$ pip install django`)
-3. Create a new project using this template
+Because of this, we found that a system that tells where and when (eventually) the product is available could help make healthcare in general an easier area to navigate.
 
-## Creating Your Project
+This project was built with the Heroku Django Starter template: https://github.com/heroku/heroku-django-template
 
-Using this template to create a new Django app is easy::
-
-    $ django-admin.py startproject --template=https://github.com/heroku/heroku-django-template/archive/master.zip --name=Procfile helloworld
-
-You can replace ``helloworld`` with your desired project name.
-
-## Deployment to Heroku
-
-    $ git init
-    $ git add -A
-    $ git commit -m "Initial commit"
-
-    $ heroku create
-    $ git push heroku master
-
-    $ heroku run python manage.py migrate
-
-## Further Reading
-
-- [Gunicorn](https://warehouse.python.org/project/gunicorn/)
-- [WhiteNoise](https://warehouse.python.org/project/whitenoise/)
-- [django-postgrespool](https://warehouse.python.org/project/django-postgrespool/)
-- [dj-database-url](https://warehouse.python.org/project/dj-database-url/)
