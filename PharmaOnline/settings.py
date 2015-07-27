@@ -100,7 +100,7 @@ USE_TZ = True
 #DATABASES['default'] = dj_database_url.config()
 
 # Enable Connection Pooling (if desired)
-#DATABASES['default']['ENGINE']= 'django.db.backends.sqlite3'
+#DATABASES['default']['ENGINE']= 'django_postgrespool'
 
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()

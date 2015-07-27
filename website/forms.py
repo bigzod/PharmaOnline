@@ -1,6 +1,12 @@
 from django import forms
 
 
-class EmailForm(forms.Form):
-	email = forms.EmailField
+class ContactForm(forms.Form):
+	nom = forms.CharField(required = True)
+	adresse_mail = forms.EmailField(required = True)
+	telephone = forms.CharField(required = False)
+	contenu = forms.CharField(
+		required = True,
+		widget = forms.Textarea
+	)
 	

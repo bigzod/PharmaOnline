@@ -10,4 +10,6 @@ def pharmacies(request):
 	pharmacie = Pharmacie.objects.all()
 	return render(request, 'website/pharmacies.html', {'RX': pharmacie})
 	
+
+	
 	
