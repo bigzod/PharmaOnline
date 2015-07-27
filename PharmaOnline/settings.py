@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = "z8^7muz*xx8&#xosuhz^=aq)6k4)g_ju16gp!*(vsz1!f1-=@@"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+	#'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 	'haystack',
