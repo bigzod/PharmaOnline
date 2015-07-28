@@ -28,7 +28,7 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 # Allow all host headers
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 #EMAIL_HOST = 'smtp.gmail.com'
 #EMAIL_HOST_USER = ''
