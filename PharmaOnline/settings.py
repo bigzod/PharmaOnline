@@ -88,14 +88,14 @@ WSGI_APPLICATION = 'PharmaOnline.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pharmaonlinedb',
+	'default': {
+		'ENGINE': 'django.db.backends.postgresql_psycopg2',
+		'NAME': 'pharmaonlinedb',
 		'USER': 'postgres',
 		'PASSWORD': 'bobenson1997',
 		'HOST': 'localhost',
 		'PORT': '5432',
-    }
+	}
 }
 
 # Internationalization
@@ -109,11 +109,13 @@ USE_TZ = True
 
 
 # Parse database configuration from $DATABASE_URL
-#DATABASES['default'] = dj_database_url.config()
+DATABASES['default'] = dj_database_url.config()
 
 # Enable Connection Pooling (if desired)
-#DATABASES['default']['ENGINE']= 'django_postgrespool'
-
+DATABASES['default']['ENGINE']= 'django_postgrespool'
+DATABASES['default']['NAME']= 'pharmaonlinedb'
+DATABASES['default']['USER']= 'postgres'
+DATABASES['default']['PASSWORD']= 'bobenson1997'
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
