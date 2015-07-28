@@ -23,21 +23,30 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = "z8^7muz*xx8&#xosuhz^=aq)6k4)g_ju16gp!*(vsz1!f1-=@@"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+# Allow all host headers
+ALLOWED_HOSTS = []
+
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_HOST_USER = ''
+#EMAIL_PASSWORD = ''
+#EMAIL_PORT = 587
+#EMAIL_USE_TLS = True
+
 
 # Application definition
-
 INSTALLED_APPS = (
     'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.auth', 
     'django.contrib.contenttypes',
     'django.contrib.sessions',
 	#'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	#'registration',
 	'haystack',
 	'whoosh',
 	'website',
@@ -80,8 +89,12 @@ WSGI_APPLICATION = 'PharmaOnline.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'pharmaonlinedb',
+		'USER': 'postgres',
+		'PASSWORD': 'bobenson1997',
+		'HOST': 'localhost',
+		'PORT': '5432',
     }
 }
 
@@ -96,17 +109,17 @@ USE_TZ = True
 
 
 # Parse database configuration from $DATABASE_URL
-#DATABASES['default'] = dj_database_url.config()
+DATABASES['default'] = dj_database_url.config()
 
 # Enable Connection Pooling (if desired)
-#DATABASES['default']['ENGINE']= 'django_postgrespool'
+DATABASES['default']['ENGINE']= 'django_postgrespool'
 
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# Allow all host headers
-ALLOWED_HOSTS = ['*']
+
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
@@ -129,3 +142,13 @@ HAYSTACK_CONNECTIONS = {
 		'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
 	},
 }	
+
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+
+
+
+
+
+
+
