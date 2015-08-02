@@ -46,9 +46,11 @@ INSTALLED_APPS = (
 	'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-#    'account',
+    #third party apps
+    'crispy_forms',
 	'haystack',
 	'whoosh',
+    #my apps
 	'website',
 )
 
@@ -61,8 +63,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'account.middleware.LocaleMiddleware',
-    'account.middleware.TimezoneMiddleware',
 )
 
 ROOT_URLCONF = 'PharmaOnline.urls'
@@ -78,7 +78,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'account.context_processors.account',
             ],
         },
     },
@@ -142,14 +141,4 @@ HAYSTACK_CONNECTIONS = {
 	},
 }
 
-#ACCOUNT_OPEN_SIGNUP = True
-#ACCOUNT_EMAIL_UNIQUE = True
-#ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = False
-#ACCOUNT_LOGIN_REDIRECT_URL = "home"
-#ACCOUNT_LOGOUT_REDIRECT_URL = "home"
-#ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 2
-#ACCOUNT_USE_AUTH_AUTHENTICATE = True
-
-#AUTHENTICATION_BACKENDS = [
-    "account.auth_backends.UsernameAuthenticationBackend",
-]
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
