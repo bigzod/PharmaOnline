@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
 import os
-
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -40,7 +40,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 INSTALLED_APPS = (
     'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.auth', 
     'django.contrib.contenttypes',
     'django.contrib.sessions',
 	'django.contrib.sites',
@@ -96,13 +96,6 @@ DATABASES = {
 	}
 }
 
-import dj_database_url
-# Parse database configuration from $DATABASE_URL
-#DATABASES['default'] = dj_database_url.config()
-
-# Enable Connection Pooling (if desired)
-#DATABASES['default']['ENGINE']= 'django_postgrespool'
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
@@ -111,6 +104,13 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+
+
+# Parse database configuration from $DATABASE_URL
+#DATABASES['default'] = dj_database_url.config()
+
+# Enable Connection Pooling (if desired)
+#DATABASES['default']['ENGINE']= 'django_postgrespool'
 
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
@@ -139,6 +139,7 @@ HAYSTACK_CONNECTIONS = {
 		'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
 		'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
 	},
-}
+}	
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
