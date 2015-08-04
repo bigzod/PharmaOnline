@@ -15,10 +15,12 @@
                     <a href="{{ result.object.get_absolute_url }}">{{ result.object.nom }}</a>
 					<a href="{{ result.object.get_absolute_url }}">{{ result.object.adresse }}</a>
 					<a href="{{ result.object.get_absolute_url }}">{{ result.object.zone }}</a>
-					<a href="{{ result.object.get_absolute_url }}">{{ result.object.nom_generique }}</a>
-					<a href="{{ result.object.get_absolute_url }}">{{ result.object.nom_commercial }}</a>
-					<a href="{{ result.object.get_absolute_url }}">{{ result.object.quantite }}</a>
-					<a href="{{ result.object.get_absolute_url }}"><i>{{ result.object.compagnie }}</i></a>
+                </p>
+                <p> 
+                    Nom generique:<a href="{{ result.object.get_absolute_url }}"> {{ result.object.nom_generique }}</a>
+                    Nom commercial:<a href="{{ result.object.get_absolute_url }}"> {{ result.object.nom_commercial }}</a>
+                    description: <a href="{{ result.object.get_absolute_url }}">{{ result.object.quantite }}</a>
+                    Compagnie:<a href="{{ result.object.get_absolute_url }}"><i> {{ result.object.compagnie }}</i></a>
                 </p>
             {% empty %}
                 <p>No results found.</p>

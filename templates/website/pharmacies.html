@@ -1,11 +1,11 @@
 {% extends 'website/base.html' %}
 <body>
 {% block content %}
-	{% for pharmacie in RX %}
+	{% for pharmacie in pharmacies %}
 		<div class="jumbotron">
-			<h3>{{pharmacie.nom}} - {{pharmacie.adresse}}</h3>
-			<p><i>{{pharmacie.telephone}}</i></p>
-			<p><b>{{pharmacie.zone}}</b></p>
+			<h4>{{pharmacie.nom}}</h4>
+			<p>adresse: {{pharmacie.adresse}} </p>
+			<p id="smaller"><i>telephone: {{pharmacie.telephone}} - {{pharmacie.zone}}</i></p>
 		</div>
 	{% empty %}
 		<p> Aucune Pharmacie </P>

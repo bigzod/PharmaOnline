@@ -210,7 +210,7 @@ section.success a.active {
 
 @media(max-width:767px) {
     section {
-        padding: 75px 0;
+        padding: 5px 0;
     }
 
     section.first {
@@ -472,4 +472,17 @@ footer .footer-below {
 .portfolio-modal .modal-backdrop {
     display: none;
     opacity: 0;
+}
+
+.jumbotron {
+    padding: 15px 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    color: #2c3e50;
+    background-color: #74CAB8;
+}
+
+#smaller{
+    font-size: 18px;
+    color: #DEE4B9;
 }
