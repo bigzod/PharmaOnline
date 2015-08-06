@@ -1,11 +1,14 @@
 {% extends 'website/base.html' %}
+{% load crispy_forms_tags %}
+
+
 	{% block form %}
     <form class="navbar-form navbar-left" method="get" action=".">
 		<div class="form-group">
 			<input type="text" class="form-control" placeholder="Medicament/Pharmacie" name="q">
 		</div>
 	<button type="submit" class="btn btn-default" value="Search">Search<span class="glyphicon glyphicon-map-market"></span></button>
-	
+
         {% if query %}
             <h3>Results</h3>
 
@@ -16,7 +19,7 @@
 					<a href="{{ result.object.get_absolute_url }}">{{ result.object.adresse }}</a>
 					<a href="{{ result.object.get_absolute_url }}">{{ result.object.zone }}</a>
                 </p>
-                <p> 
+                <p>
                     Nom generique:<a href="{{ result.object.get_absolute_url }}"> {{ result.object.nom_generique }}</a>
                     Nom commercial:<a href="{{ result.object.get_absolute_url }}"> {{ result.object.nom_commercial }}</a>
                     description: <a href="{{ result.object.get_absolute_url }}">{{ result.object.quantite }}</a>

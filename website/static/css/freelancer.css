@@ -13,6 +13,14 @@ body {
     background-color: #ffffff;
 }
 
+#link{
+  color:#FDC702;
+}
+
+#trip{
+  color:#000;
+}
+
 p {
     font-size: 20px;
 }

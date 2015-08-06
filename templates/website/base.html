@@ -60,7 +60,7 @@
                         <a href="#about">A propos</a>
                     </li>
 					<li class="page-scroll">
-                        <a href="#">S'identifier</a>
+                        <a href="{% url 'auth_login' %}">S'identifier</a>
                     </li>
 
                 </ul>
@@ -70,7 +70,6 @@
         <!-- /.container-fluid -->
    </nav>
 
-{% block content %}
     <header>
 			{% block header %}
         <div class="container">
@@ -86,6 +85,8 @@
         </div>
 			{% endblock %}
     </header>	<!-- Portfolio Grid Section -->
+
+{% block content %}
     <section id="FindP">
 			{% block search %}
         <div class="container">
@@ -101,14 +102,14 @@
 								<input type="text" class="form-control" placeholder="Medicament/Pharmacie" name="q">
 							</div>
 						<button type="submit" class="btn btn-default" value="Search">Search<span class="glyphicon glyphicon-map-market"></span></button>
-                        {% endblock %}
+            {% endblock %}
 						</form>
 					</p>
-
-
 		</div>	</div>
     		{% endblock %}
 	</section>
+
+
     <!-- About Section -->
     <section class="success" id="about">
 	{% block about %}
@@ -194,8 +195,8 @@
         </div>
 	{% endblock %}
 	</section>
--->	
-	
+-->
+
 {% endblock %}
     <!-- Footer -->
     <footer class="text-center">
@@ -236,8 +237,8 @@
         </div>
     </footer>
 
-	
-    
+
+
     <div class="scroll-top page-scroll visible-xs visible-sm">
         <a class="btn btn-primary" href="#page-top">
             <i class="fa fa-chevron-up"></i>

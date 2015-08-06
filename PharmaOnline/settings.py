@@ -30,24 +30,25 @@ TEMPLATE_DEBUG = True
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
-#EMAIL_HOST = 'smtp.gmail.com'
-#EMAIL_HOST_USER = ''
-#EMAIL_PASSWORD = ''
-#EMAIL_PORT = 587
-#EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'ayicult@gmail.com'
+EMAIL_PASSWORD = 'promocultht14'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 
 # Application definition
 INSTALLED_APPS = (
     'django.contrib.admin',
-    'django.contrib.auth', 
+    'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-	#'django.contrib.sites',
+	'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #third party apps
     'crispy_forms',
+    'registration',
 	'haystack',
 	'whoosh',
     #my apps
@@ -139,7 +140,10 @@ HAYSTACK_CONNECTIONS = {
 		'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
 		'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
 	},
-}	
-
+}
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+ACCOUNT_REGISTRATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+SITE_ID = 1
