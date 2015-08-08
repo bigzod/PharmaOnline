@@ -30,12 +30,12 @@ TEMPLATE_DEBUG = True
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'ayicult@gmail.com'
-EMAIL_PASSWORD = 'promocultht14'
-EMAIL_PORT = 587
+#email settings
 EMAIL_USE_TLS = True
-
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'doublerico7@gmail.com'
+EMAIL_PASSWORD = 'bobandson1997'
+EMAIL_PORT = 587
 
 # Application definition
 INSTALLED_APPS = (
@@ -117,9 +117,6 @@ USE_TZ = True
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-
-
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
@@ -147,3 +144,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
 SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'

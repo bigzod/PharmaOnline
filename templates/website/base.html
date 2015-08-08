@@ -50,19 +50,27 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+									{% if  request.user.is_authenticated %}
                     <li class="hidden active">
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
                         <a href="{% url 'pharmacies' %}">Les Pharmacies</a>
                     </li>
+										<li class="page-scroll">
+                        <a href="{% url 'auth_logout' %}">Deconnection</a>
+                    </li>
+										{% else %}
+										<li class="page-scroll">
+                        <a href="{% url 'pharmacies' %}">Les Pharmacies</a>
+                    </li>
                     <li class="page-scroll">
-                        <a href="#about">A propos</a>
+                        <a href="{% url 'registration_register' %}"> Creer un compte.</a>
                     </li>
 					<li class="page-scroll">
                         <a href="{% url 'auth_login' %}">S'identifier</a>
                     </li>
-
+										{% endif %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
