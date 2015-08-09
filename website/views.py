@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, render_to_response
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from website.models import Pharmacie
+from .models import Pharmacie
 
 # Create your views here.
 def home(request):

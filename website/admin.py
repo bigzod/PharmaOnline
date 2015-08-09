@@ -1,5 +1,5 @@
 from django.contrib import admin
-from website.models import Medicament, Pharmacie, Agence
+from .models import Medicament, Pharmacie, Agence
 
 class MedicamentAdmin(admin.ModelAdmin):
    list_display   = ('nom_commercial', 'categorie', 'nom_generique', 'compagnie')

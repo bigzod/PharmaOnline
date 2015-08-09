@@ -216,7 +216,7 @@ section.success a.active {
     border-color: #18bc9c;
 }
 
-@media(max-width:767px) {
+@media(max-width:940px) {
     section {
         padding: 5px 0;
     }

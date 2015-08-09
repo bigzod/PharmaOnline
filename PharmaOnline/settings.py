@@ -33,8 +33,8 @@ ALLOWED_HOSTS = ['*']
 #email settings
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'doublerico7@gmail.com'
-EMAIL_PASSWORD = 'bobandson1997'
+EMAIL_HOST_USER = 'ayicult@gmail.com'
+EMAIL_PASSWORD = 'promocultht14'
 EMAIL_PORT = 587
 
 # Application definition
