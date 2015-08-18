@@ -184,7 +184,7 @@ header .intro-text .skills {
 }
 
 section {
-    padding: 100px 0;
+    padding: 95px 0;
 }
 
 section.content{
@@ -216,7 +216,7 @@ section.success a.active {
     border-color: #18bc9c;
 }
 
-@media(max-width:940px) {
+@media(max-width:800px) {
     section {
         padding: 5px 0;
     }

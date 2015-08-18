@@ -30,12 +30,6 @@ TEMPLATE_DEBUG = True
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
-#email settings
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'ayicult@gmail.com'
-EMAIL_PASSWORD = 'promocultht14'
-EMAIL_PORT = 587
 
 # Application definition
 INSTALLED_APPS = (
@@ -86,10 +80,24 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'PharmaOnline.wsgi.application'
 
+#email settings
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'ayicult@gmail.com'
+EMAIL_PASSWORD = 'promocultht14'
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+SERVER_EMAIL = EMAIL_HOST_USER
+
+ADMINS = (
+    ('Henri', 'doublerico7@gmail.com'),
+    ('Pepe', 'tchristian_laforest@hotmail.com'),
+    ('Grizzly', 'chrtistetienne15@gmail.com'),
+)
+
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.sqlite3',
@@ -109,7 +117,6 @@ USE_TZ = True
 
 # Parse database configuration from $DATABASE_URL
 #DATABASES['default'] = dj_database_url.config()
-
 # Enable Connection Pooling (if desired)
 #DATABASES['default']['ENGINE']= 'django_postgrespool'
 
@@ -119,8 +126,6 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
-
-
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
@@ -132,15 +137,20 @@ STATICFILES_DIRS = (
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+# Haystack settings
 HAYSTACK_CONNECTIONS = {
 	'default': {
 		'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
 		'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
 	},
 }
+HAYSTACK_RESULTS_PER_PAGE = 5
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
+# Crispy forms settings
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
+#registration settings
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
 SITE_ID = 1
